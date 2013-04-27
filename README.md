@@ -4,6 +4,8 @@ msmtp-queue-cron
 an simple cronjob shell script to send out emails via msmtp(q). You can write your emails as normal when being
 offline and this script will send them out as soon as there is a connection to the internet.
 
+license: AGPLv3
+
 references
 ==========
 * [msmtp](http://msmtp.sourceforge.net/)
