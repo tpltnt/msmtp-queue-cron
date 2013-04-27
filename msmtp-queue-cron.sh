@@ -15,3 +15,26 @@
 #
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+# check for msmtp-queue
+which msmtp-queue
+if [[ 0 -ne $? ]]
+then
+    echo "please install msmtp(queue)" &>2
+    exit 1
+fi
+# check for ping
+which ping
+if [[ 0 -ne $? ]]
+then
+    echo "please install the ping utility" &>2
+    exit 1
+fi
+
+# ping google to test for internet connectivity
+ping -c 1 google.com
+if [[ 0 -eq $? ]]
+then
+    # we can ping google -> empty the local mail queue
+    msmtp-queue
+fi
