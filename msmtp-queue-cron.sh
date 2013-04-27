@@ -36,5 +36,5 @@ ping -c 1 google.com
 if [[ 0 -eq $? ]]
 then
     # we can ping google -> empty the local mail queue
-    msmtp-queue
+    msmtp-queue -r
 fi
